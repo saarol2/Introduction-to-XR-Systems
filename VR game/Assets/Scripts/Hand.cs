@@ -10,12 +10,17 @@ public class Hand : MonoBehaviour
     private float triggerTarget;
     private float gripCurrent;
     private float triggerCurrent;
+    private float emitWindTarget; // Uusi muuttuja
+    private float emitWindCurrent; // Uusi muuttuja
     private string animatorGripParam = "Grip";
     private string animatorTriggerParam = "Trigger";
+    private string animatorEmitWindParam = "EmitWind"; // Uusi parametri
 
     void Start()
     {
         animator = GetComponent<Animator>();
+        // Aseta EmitWind-parametri alussa nollaksi
+        animator.SetFloat(animatorEmitWindParam, 0.0f);
     }
 
     void Update()
@@ -33,6 +38,10 @@ public class Hand : MonoBehaviour
         triggerTarget = v;
     }
 
+    internal void SetEmitWind(float v) // Uusi metodi
+    {
+        emitWindTarget = v;
+    }
 
     void AnimateHand()
     {
@@ -45,6 +54,11 @@ public class Hand : MonoBehaviour
         {
             triggerCurrent = Mathf.MoveTowards(triggerCurrent, triggerTarget, Time.deltaTime * speed);
             animator.SetFloat(animatorTriggerParam, triggerCurrent);
+        }
+        if (emitWindCurrent != emitWindTarget) // Uusi logiikka
+        {
+            emitWindCurrent = Mathf.MoveTowards(emitWindCurrent, emitWindTarget, Time.deltaTime * speed);
+            animator.SetFloat(animatorEmitWindParam, emitWindCurrent);
         }
     }
 }
