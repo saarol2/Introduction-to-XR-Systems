@@ -26,6 +26,6 @@ public class TeleportPlayerToBall : MonoBehaviour
 
     void TeleportPlayerToBallPosition()
     {
-        player.position = ball.position + Vector3.back * 1f; // Teleporttaa pelaajan pallon yläpuolelle
+        player.position = ball.position + Vector3.back * 0.5f;
     }
 }

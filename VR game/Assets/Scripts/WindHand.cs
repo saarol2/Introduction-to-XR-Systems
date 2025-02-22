@@ -3,7 +3,7 @@ using UnityEngine.InputSystem;
 
 public class WindHand : MonoBehaviour
 {
-    public float windForce = 5f;
+    public float windForce = 7f;
     public Transform windDirection;
     public InputActionReference blowAction;
     public InputActionReference gripAction;
