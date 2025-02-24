@@ -3,7 +3,7 @@ using UnityEngine.InputSystem;
 
 public class WindHand : MonoBehaviour
 {
-    public float windForce = 7f;
+    public float windForce = 5f;
     public Transform windDirection;
     public InputActionReference blowAction;
     public InputActionReference gripAction;
@@ -33,7 +33,6 @@ public class WindHand : MonoBehaviour
             return;
         }
         isBlowing = blowAction.action.ReadValue<float>() > 0.5f;
-        Debug.Log("Is Blowing: " + isBlowing);
 
         if (isBlowing && !windParticles.isPlaying)
         {
@@ -50,13 +49,11 @@ public class WindHand : MonoBehaviour
     {
         if (isBlowing && other.CompareTag("Ball"))
         {
-            Debug.Log("Blowing on Ball");
             Rigidbody ballRb = other.GetComponent<Rigidbody>();
             if (ballRb != null)
             {
                 Vector3 forceDirection = -windDirection.right;
                 ballRb.AddForce(forceDirection * windForce, ForceMode.Impulse);
-                Debug.Log("Applying Force: " + forceDirection * windForce);
             }
         }
     }

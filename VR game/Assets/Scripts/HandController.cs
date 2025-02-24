@@ -3,30 +3,26 @@ using UnityEngine.InputSystem;
 
 public class HandController : MonoBehaviour
 {
+    public InputActionReference selectAction;
+    public InputActionReference activateAction;
+
     public Hand hand;
-    private CustomGrab otherHand;
 
-    public InputActionReference gripAction;
-    public InputActionReference triggerAction;
-
-    private void Start()
+    private void OnEnable()
     {
-        gripAction.action.Enable();
-        triggerAction.action.Enable();
-
-        foreach (CustomGrab c in transform.parent.GetComponentsInChildren<CustomGrab>())
-        {
-            if (c != this)
-                otherHand = c;
-        }
+        selectAction.action.Enable();
+        activateAction.action.Enable();
     }
 
-    private void Update()
+    private void OnDisable()
     {
-        float gripValue = gripAction.action.ReadValue<float>();
-        float triggerValue = triggerAction.action.ReadValue<float>();
+        selectAction.action.Disable();
+        activateAction.action.Disable();
+    }
 
-        hand.SetGrip(gripValue);
-        hand.SetTrigger(triggerValue);
+    void Update()
+    {
+        hand.SetGrip(selectAction.action.ReadValue<float>());
+        hand.SetTrigger(activateAction.action.ReadValue<float>());
     }
 }
