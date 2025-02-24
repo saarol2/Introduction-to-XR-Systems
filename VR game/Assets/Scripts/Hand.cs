@@ -24,6 +24,8 @@ public class Hand : MonoBehaviour
     
     private Transform followTarget;
     private Rigidbody body;
+    private Collider[] fingerColliders;
+    [SerializeField] private string emitWindColliderTag = "EmitWind";
 
     void Start()
     {
@@ -39,12 +41,14 @@ public class Hand : MonoBehaviour
 
         body.position = followTarget.position;
         body.rotation = followTarget.rotation;
+
+        // Hae kaikki lapsiobjektien colliderit
+        fingerColliders = GetComponentsInChildren<Collider>();
     }
 
     void Update()
     {
         AnimateHand();
-
         PhysicsMove();
     }
 
@@ -64,6 +68,7 @@ public class Hand : MonoBehaviour
     internal void SetGrip(float v)
     {
         gripTarget = v;
+        SetFingerCollidersTrigger(v > 0.5f);
     }
 
     internal void SetTrigger(float v)
@@ -92,6 +97,18 @@ public class Hand : MonoBehaviour
         {
             emitWindCurrent = Mathf.MoveTowards(emitWindCurrent, emitWindTarget, Time.deltaTime * animationSpeed);
             animator.SetFloat(animatorEmitWindParam, emitWindCurrent);
+        }
+    }
+
+    private void SetFingerCollidersTrigger(bool isTrigger)
+    {
+        foreach (var collider in fingerColliders)
+        {
+            if (collider.CompareTag(emitWindColliderTag))
+            {
+                continue;
+            }
+            collider.isTrigger = isTrigger;
         }
     }
 }

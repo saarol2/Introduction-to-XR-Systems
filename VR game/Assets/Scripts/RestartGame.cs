@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class RestartGame : MonoBehaviour
 {
-    public InputActionReference restartAction; // Viittaus Input Actioniin
+    public InputActionReference restartAction;
 
     void OnEnable()
     {
@@ -25,6 +25,6 @@ public class RestartGame : MonoBehaviour
 
     void Restart()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name); // Lataa nykyinen scene uudelleen
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
