@@ -1492,6 +1492,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: -4242482846685892375, guid: 1bcd0c46cb3e7fa4392e6ae2a1f8749a, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 7a0865f885f436140bf152e1d2330436, type: 2}
     - target: {fileID: 919132149155446097, guid: 1bcd0c46cb3e7fa4392e6ae2a1f8749a, type: 3}
       propertyPath: m_Name
       value: LeftHand
@@ -2123,20 +2127,18 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'RightHand/PrimaryButton: Emit Wind
+  m_text: 'RightHand/PrimaryButton: Wind Force
 
 
-    RightHand/SecondaryButton: Quit
-    Game
+    LeftHand/PrimaryButton: Teleport
+    to Ball
 
 
-    LeftHand/PrimaryButton: Teleport to Ball
+    RightHand/SecondaryButton: Quit Game
 
 
     LeftHand/SecondaryButton:
-    Restart game
-
-'
+    Restart game'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2163,8 +2165,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 1.2
-  m_fontSizeBase: 1.2
+  m_fontSize: 1.05
+  m_fontSizeBase: 1.05
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2201,7 +2203,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -4.982376, y: -3.835547, z: -4.9278245, w: -3.7542982}
+  m_margin: {x: -4.982376, y: -5.9396725, z: -4.996243, w: -5.997492}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -8863,7 +8865,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: ee6a3d8d7022a7d41a93efab3ec4d489, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9902,6 +9904,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
       objectReference: {fileID: 0}
+    - target: {fileID: -4242482846685892375, guid: 1bcd0c46cb3e7fa4392e6ae2a1f8749a, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 7a0865f885f436140bf152e1d2330436, type: 2}
     - target: {fileID: 919132149155446097, guid: 1bcd0c46cb3e7fa4392e6ae2a1f8749a, type: 3}
       propertyPath: m_Name
       value: RightHand
@@ -16497,8 +16503,8 @@ Transform:
   m_GameObject: {fileID: 1725831885}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.854, y: 1.314, z: 5.301}
-  m_LocalScale: {x: 1, y: 0.8, z: 0.025}
+  m_LocalPosition: {x: -1.877, y: 1.314, z: 5.301}
+  m_LocalScale: {x: 1.2, y: 0.8, z: 0.025}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 879067143}
@@ -17083,7 +17089,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d9fbc1b02588638478845861c755879e, type: 2}
+  - {fileID: 2100000, guid: 84db7d0faa7ee554a914b1d1c097cea9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
