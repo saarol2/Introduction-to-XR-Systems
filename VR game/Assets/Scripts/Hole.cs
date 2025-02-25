@@ -8,12 +8,13 @@ public class Hole : MonoBehaviour
     {
         if (other.CompareTag("Ball"))
         {
-            EndGame();
+            EndGame(other.gameObject);
         }
     }
 
-    void EndGame()
+    void EndGame(GameObject ball)
     {
         particleEffect.Play();
+        Destroy(ball);
     }
 }

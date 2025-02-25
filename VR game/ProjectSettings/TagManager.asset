@@ -7,6 +7,7 @@ TagManager:
   - Grabbable
   - Ball
   - EmitWind
+  - GolfHole
   layers:
   - Default
   - TransparentFX

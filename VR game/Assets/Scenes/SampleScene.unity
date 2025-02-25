@@ -1120,7 +1120,7 @@ GameObject:
   - component: {fileID: 527541543}
   m_Layer: 0
   m_Name: Sphere
-  m_TagString: Untagged
+  m_TagString: GolfHole
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8696,6 +8696,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1272586932}
     - target: {fileID: 5239817376786030229, guid: 88c7620f9a549244fac5ef53759b8484, type: 3}
+      propertyPath: rotationSpeed
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 5239817376786030229, guid: 88c7620f9a549244fac5ef53759b8484, type: 3}
       propertyPath: animationSpeed
       value: 10
       objectReference: {fileID: 0}
@@ -8719,6 +8723,10 @@ PrefabInstance:
       propertyPath: followObject
       value: 
       objectReference: {fileID: 610001483}
+    - target: {fileID: 8531736313166373972, guid: 88c7620f9a549244fac5ef53759b8484, type: 3}
+      propertyPath: rotationSpeed
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 8531736313166373972, guid: 88c7620f9a549244fac5ef53759b8484, type: 3}
       propertyPath: animationSpeed
       value: 10
@@ -14232,7 +14240,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1909957945}
   serializedVersion: 4
-  m_Mass: 7.5
+  m_Mass: 10
   m_Drag: 2
   m_AngularDrag: 0.6
   m_CenterOfMass: {x: 0, y: 0, z: 0}
